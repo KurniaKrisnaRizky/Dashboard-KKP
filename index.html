@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technology Company Sales Dashboard</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+  </head>
+  <body>
+    <main>
+      <section id="cards">
+        <div class="cardj">
+            <img src="./image/logo.jpg" alt="Company Logo" class="logo" />
+            <div class="text-container">
+                <h1>TECHNOLOGY</h1>
+                <h1>COMPANY SALES</h1>
+                <h1>DASHBOARD</h1>
+            </div>
+        </div>
+        
+
+        <div class="card">
+          <h2>UNIT SALES</h2>
+          <p id="total-unit-sales">0</p>
+        </div>
+        <div class="card">
+          <h2>REVENUE</h2>
+          <p id="total-revenue">0</p>
+        </div>
+        <div class="card">
+          <h2>PROFIT</h2>
+          <p id="total-profit">0</p>
+        </div>
+
+        <!-- Filter Form -->
+        <div id="filter-container">
+          <div class="card">
+            <h2>REGION</h2>
+            <select class="filter" id="filter-region">
+              <option value="">Pilih Region</option>
+            </select>
+          </div>
+
+          <div class="card">
+            <h2>STATE</h2>
+            <select class="filter" id="filter-state">
+              <option value="">Pilih State</option>
+            </select>
+          </div>
+
+          <div class="card">
+            <h2>TAHUN</h2>
+            <select class="filter" id="filter-year">
+              <option value="">Pilih Tahun</option>
+            </select>
+          </div>
+        </div>
+      </section>
+      <section id="charts">
+        <canvas id="shipping-cost-chart"></canvas>
+        <canvas id="monthly-transactions-chart"></canvas>
+        <canvas id="monthly-profit-chart"></canvas>
+        <canvas id="discount-impact-chart"></canvas>
+        <canvas id="profit-shipping-region-chart"></canvas>
+        <canvas id="profit-transactions-region-chart"></canvas>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

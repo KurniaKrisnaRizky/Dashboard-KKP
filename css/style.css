@@ -1,0 +1,219 @@
+/* style.css */
+
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.cardj {
+    background-color: #fff; /* Warna latar belakang */
+    border: 1px solid #ddd; /* Batas ringan */
+    border-radius: 8px; /* Sudut melengkung */
+    padding: 15px; /* Ruang dalam */
+    display: flex; /* Gunakan Flexbox untuk tata letak horizontal */
+    align-items: center; /* Rata tengah secara vertikal */
+    min-width: 250px; /* Lebar minimum */
+    text-align: left; /* Teks rata kiri */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bayangan */
+    transition: transform 0.3s, box-shadow 0.3s; /* Efek hover */
+    font-family: Cambria, serif; /* Font yang diinginkan */
+    font-size: 14px; /* Ukuran font */
+    height: 105px;
+    color: rgba(17, 41, 255, 0.6); /* Warna teks */
+}
+
+.logo {
+    width: 86px; /* Lebar logo */
+    height: 86px; /* Tinggi logo */
+    border-radius: 50%; /* Membuat logo berbentuk lingkaran */
+    margin-right: 15px; /* Jarak antara logo dan teks */
+    flex-shrink: 0; /* Pastikan logo tidak mengecil */
+}
+
+.cardj .text-container {
+    display: flex; /* Tata letak Flexbox */
+    flex-direction: column; /* Susunan teks secara vertikal */
+}
+
+/* Cards Section */
+#cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1;
+    min-width: 120px;
+    height: 105px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: Cambria, serif;
+    padding-top: 15px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: rgba(17, 41, 255, 0.6);
+}
+
+.card p {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+    color: rgba(17, 41, 255, 0.6);
+}
+
+
+#filter-container .card h2 {
+    margin-bottom: 0rem;
+}
+
+
+/* Filter Container */
+#filter-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
+
+#filter-container select {
+    width: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #555;
+    font-size: 12px;
+    transition: border-color 0.2s;
+    margin: 10px 10px;
+}
+
+#filter-container select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Charts Section */
+#charts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0rem 2rem;
+    padding-bottom: 2rem;
+}
+
+#percentage-shipping-cost {
+    text-transform: uppercase;
+}
+
+
+/* Individual chart container */
+canvas {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 415px;
+    padding: 15px;
+    max-height: 315px; /* Tinggi grafik lebih kecil */
+}
+
+/* Responsive Design */
+/* Responsive Design */
+
+/* Untuk layar besar hingga sedang (laptop atau tablet landscape) */
+@media (max-width: 1024px) {
+    #cards {
+        justify-content: center; /* Elemen kartu di tengah */
+        gap: 1rem; /* Jarak antar kartu */
+    }
+
+    .card {
+        flex: 1 1 calc(33.33% - 1rem); /* 3 kartu per baris */
+        min-width: 200px; /* Ukuran minimum kartu */
+    }
+
+    canvas {
+        flex: 1 1 calc(50% - 1rem); /* 2 grafik per baris */
+        max-height: 300px; /* Tinggi grafik proporsional */
+    }
+}
+
+/* Untuk layar sedang hingga kecil (tablet portrait atau layar kecil) */
+@media (max-width: 768px) {
+    #cards {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 1rem); /* 2 kartu per baris */
+        min-width: 150px; /* Ukuran minimum kartu lebih kecil */
+    }
+
+    canvas {
+        flex: 1 1 calc(100% - 1rem); /* 1 grafik per baris */
+        max-height: 280px; /* Tinggi grafik proporsional */
+    }
+}
+
+/* Untuk layar sangat kecil (ponsel) */
+@media (max-width: 480px) {
+    .cardj {
+        flex-direction: column; /* Susun vertikal logo dan teks */
+        align-items: center; /* Elemen rata tengah */
+        text-align: center; /* Teks rata tengah */
+        height: auto; /* Tinggi fleksibel */
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px; /* Spasi antara logo dan teks */
+    }
+
+    #cards {
+        flex-wrap: wrap; /* Elemen dapat pindah ke baris berikutnya */
+        gap: 0.5rem; /* Jarak antar kartu lebih kecil */
+    }
+
+    .card {
+        flex: 1 1 100%; /* 1 kartu per baris */
+        min-width: 120px; /* Ukuran minimum */
+    }
+
+    canvas {
+        flex: 1 1 100%; /* Grafik penuh pada satu baris */
+        max-height: 250px; /* Tinggi grafik lebih kecil */
+    }
+}
